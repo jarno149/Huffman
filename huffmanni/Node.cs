@@ -9,7 +9,7 @@ namespace huffmanni
     class Node : IComparable<Node>
     {
 
-        // Merkin oikealla puolella sijaitseva node
+        // Merkin oikealla puolella sijaitseva nodee
         public Node Right { get; set; }
 
         // Merkin vasemmalla puolella sijaitseva node

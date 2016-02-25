@@ -8,6 +8,7 @@ namespace huffmanni
 {
     class Program
     {
+        // testi
         static void Main(string[] args)
         {
             string nimi = "AAAAABBBBCCD";

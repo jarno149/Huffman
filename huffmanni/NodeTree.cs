@@ -8,6 +8,7 @@ namespace huffmanni
 {
     class NodeTree
     {
+        // testi
         public Node Root { get; set; }
         public List<Node> nodes { get; set; }
 
