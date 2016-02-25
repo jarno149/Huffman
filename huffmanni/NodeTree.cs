@@ -14,6 +14,8 @@ namespace huffmanni
         {
             this.nodes = nodes;
             CreateTree();
+            Console.WriteLine("\n\n\n");
+            TraversePreorder(this.Root);
         }
 
         private void CreateTree(Node last = null)
@@ -21,10 +23,10 @@ namespace huffmanni
             if(last == null)
             {
                 Node latestRoot = new Node(nodes[0].RefCount + nodes[1].RefCount);
-                latestRoot.Left = nodes[0];
-                latestRoot.Right = nodes[1];
+                latestRoot.Left = nodes[1];
+                latestRoot.Right = nodes[0];
                 nodes.RemoveAt(0);
-                nodes.RemoveAt(1);
+                nodes.RemoveAt(0);
 
                 CreateTree(latestRoot);
             }
@@ -44,7 +46,7 @@ namespace huffmanni
                     }
                     Node tmp = nodes[1];
                     nodes.RemoveAt(0);
-                    nodes.RemoveAt(1);
+                    nodes.RemoveAt(0);
                     CreateTree(tmp);
                 }
                 if(this.nodes.Count == 1)
@@ -54,9 +56,35 @@ namespace huffmanni
                     {
                         this.Root.Left = last;
                         this.Root.Right = nodes[0];
-                        this.nodes.RemoveAt(0);
                     }
+                    else
+                    {
+                        this.Root.Left = nodes[0];
+                        this.Root.Right = last;
+                    }
+                    this.nodes.RemoveAt(0);
                 }
+            }
+        }
+
+        public void TraversePreorder(Node t)
+        {
+            if (t != null)
+            {
+                Visit(t);
+                TraversePreorder(t.Left);
+                TraversePreorder(t.Right);
+            }
+        }
+        private void Visit(Node t)
+        {
+            if(t.Char != null)
+            {
+                Console.WriteLine(t.Char + " " + t.RefCount);
+            }
+            else
+            {
+                Console.WriteLine(t.RefCount);
             }
         }
     }

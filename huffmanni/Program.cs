@@ -10,11 +10,9 @@ namespace huffmanni
     {
         static void Main(string[] args)
         {
-            string nimi = "jarno rajala";
+             string nimi = "aaabbc";
 
              List<Node> nodes = LetterCount(nimi);
-
-             //Tree tree = new Tree(nodes);
 
              NodeTree tree = new NodeTree(nodes);
         }
@@ -40,7 +38,7 @@ namespace huffmanni
                 }
                 if(count != 0)
                 {
-                    //Console.WriteLine(count + " " + Convert.ToChar(i));
+                    Console.WriteLine(count + " " + Convert.ToChar(i));
                     Node node = new Node(Convert.ToChar(i), count);
                     nodes.Add(node);
                 }
