@@ -12,9 +12,11 @@ namespace huffmanni
         {
             string nimi = "jarno rajala";
 
-             List<TreeNode> nodes = LetterCount(nimi);
+             List<Node> nodes = LetterCount(nimi);
 
-             Tree tree = new Tree(nodes);
+             //Tree tree = new Tree(nodes);
+
+             NodeTree tree = new NodeTree(nodes);
         }
 
 
@@ -22,9 +24,9 @@ namespace huffmanni
         /// Luetaan kunkin tekstissä esiintyvän kirjaimen lukumäärä
         /// </summary>
         /// <param name="text">Teksti</param>
-        public static List<TreeNode> LetterCount(string text)
+        public static List<Node> LetterCount(string text)
         {
-            List<TreeNode> nodes = new List<TreeNode>();
+            List<Node> nodes = new List<Node>();
 
             for (int i = 32; i <= 255; i++)
             {
@@ -38,8 +40,8 @@ namespace huffmanni
                 }
                 if(count != 0)
                 {
-                    Console.WriteLine(count + " " + Convert.ToChar(i));
-                    TreeNode node = new TreeNode(Convert.ToChar(i), count);
+                    //Console.WriteLine(count + " " + Convert.ToChar(i));
+                    Node node = new Node(Convert.ToChar(i), count);
                     nodes.Add(node);
                 }
             }

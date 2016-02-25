@@ -46,9 +46,9 @@ namespace huffmanni
                 if(last.References < nodes[0].References)
                 {
                     node.Left = last;
-                    node.Left.indicator = this.indicator + "0";
+
                     node.Right = nodes[0];
-                    node.Right.indicator = this.indicator + "1";
+
                 }
                 else
                 {
@@ -60,6 +60,21 @@ namespace huffmanni
                 {
                     CreateTree(node, false);
                 }
+            }
+        }
+
+        private void Visit(TreeNode t)
+        {
+            Console.Write(t.Character + " ");
+        }
+
+        public void TraversePreorder(TreeNode t)
+        {
+            if (t != null)
+            {
+                Visit(t);
+                TraversePreorder(t.Left);
+                TraversePreorder(t.Right);
             }
         }
     }
