@@ -21,6 +21,8 @@ namespace huffmanni
         // Määrä kuinka monta kertaa kirjain esiintyy
         public int RefCount { get; set; }
 
+        public string binary { get; set; }
+
         public Node(char Char, int Ref)
         {
             this.Char = Char;

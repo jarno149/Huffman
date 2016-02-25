@@ -10,9 +10,15 @@ namespace huffmanni
     {
         static void Main(string[] args)
         {
-             string nimi = "aaabbc";
+            string nimi = "AAAAABBBBCCD";
 
              List<Node> nodes = LetterCount(nimi);
+             nodes.Sort();
+
+             foreach (Node node in nodes)
+             {
+                 Console.WriteLine(node.Char + " " + node.RefCount);
+             }
 
              NodeTree tree = new NodeTree(nodes);
         }
