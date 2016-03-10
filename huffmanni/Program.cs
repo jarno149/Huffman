@@ -11,7 +11,7 @@ namespace huffmanni
         // testi
         static void Main(string[] args)
         {
-            string nimi = "AAAAABBBBCCD";
+            string nimi = "AAAAABBBCCDEEE";
 
              List<Node> nodes = LetterCount(nimi);
              nodes.Sort();
