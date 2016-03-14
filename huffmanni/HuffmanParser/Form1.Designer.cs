@@ -30,11 +30,12 @@
         {
             this.FilePack = new System.Windows.Forms.Button();
             this.TextBlock = new System.Windows.Forms.RichTextBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // FilePack
             // 
-            this.FilePack.Location = new System.Drawing.Point(757, 14);
+            this.FilePack.Location = new System.Drawing.Point(608, 12);
             this.FilePack.Name = "FilePack";
             this.FilePack.Size = new System.Drawing.Size(98, 23);
             this.FilePack.TabIndex = 0;
@@ -50,11 +51,22 @@
             this.TextBlock.TabIndex = 1;
             this.TextBlock.Text = "";
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(608, 86);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(98, 23);
+            this.button1.TabIndex = 2;
+            this.button1.Text = "Pura tiedosto";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(867, 430);
+            this.ClientSize = new System.Drawing.Size(715, 430);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.TextBlock);
             this.Controls.Add(this.FilePack);
             this.Name = "Form1";
@@ -67,6 +79,7 @@
 
         private System.Windows.Forms.Button FilePack;
         private System.Windows.Forms.RichTextBox TextBlock;
+        private System.Windows.Forms.Button button1;
     }
 }
 
